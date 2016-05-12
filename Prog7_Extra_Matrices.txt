@@ -1,0 +1,75 @@
+##+1+13 flags ##
+
+PROGRAM matrices
+   DECLARE
+      INTEGER mat1 4 :: 4; // First 4 by 4 matrix
+      INTEGER mat2 4 :: 4; // Second 4 by 4 matrix
+      INTEGER mat3 4 :: 4; // Result 4 by 4 matrix
+      INTEGER i; // Counter
+      INTEGER j; // variables
+   END
+
+   MAIN
+      /* Assigning values to the two matrices */
+      OUTPUT "Assigning values to matrices\n";
+      i <- 0;
+      WHILE (i < 4) DO
+         j <- 0;
+         WHILE (j < 4) DO
+            //mat1[i:j] <- j; 
+            //mat2[i:j] <- ( i + 1 ) * ( j + 1 );
+            mat1[i:j] <- 1;
+            mat2[i:j] <- 2;
+            j <- j + 1;            
+         END;
+         i <- i + 1;
+      END;
+
+      OUTPUT "Matrix 1:\n";
+      i <- 0;
+      WHILE (i < 4) DO
+         j <- 0;
+         WHILE (j < 4) DO
+            OUTPUT "%d\t", mat1[i:j];
+            j <- j + 1;            
+         END;
+         OUTPUT "\n";
+         i <- i + 1;
+      END;
+
+      OUTPUT "Matrix 2:\n";
+      i <- 0;
+      WHILE (i < 4) DO
+         j <- 0;
+         WHILE (j < 4) DO
+            OUTPUT "%d\t", mat2[i:j];
+            j <- j + 1;            
+         END;
+         OUTPUT "\n";
+         i <- i + 1;
+      END;
+
+      /* Adding mat1 and mat2 and storing result in mat3 */
+      i <- 0;
+      WHILE (i < 4) DO
+         j <- 0;
+         WHILE (j < 4) DO
+            mat3[i:j] <- mat1[i:j] + mat2[i:j];
+            j <- j + 1;            
+         END;
+         i <- i + 1;
+      END;
+
+      OUTPUT "Matrix 3 = Matrix 1 + Matrix 2:\n";
+      i <- 0;
+      WHILE (i < 4) DO
+         j <- 0;
+         WHILE (j < 4) DO
+            OUTPUT "%d\t", mat3[i:j];
+            j <- j + 1;            
+         END;
+         OUTPUT "\n";
+         i <- i + 1;
+      END;
+   END
+END

@@ -1,0 +1,1647 @@
+Prog1_Sorting.txt
+
+SOURCE:
+
+##+1+13 flags ##
+
+
+/* Sorting program - Bubble Sort */
+
+PROGRAM bubble
+   /* Declarations of all variables */
+   DECLARE
+      INTEGER arr 5;    // Array holding values to be sorted
+      INTEGER swapped;  // swapped = 1 if a swap has been made
+      INTEGER i;        // Counter
+      INTEGER j;        // variables
+      INTEGER temp;     // Temporary variable
+      INTEGER x;
+   END
+
+   /* The MAIN procedure. This will be executed first. */
+   MAIN
+      /* Assigning values to the array */
+      arr[0] <- 112;
+      arr[1] <- 3;
+      arr[2] <- -1389;
+      arr[3] <- 79;  
+      arr[4] <- -639;
+      
+      /* Printing array before sorting */
+      OUTPUT "Array before sorting:\n";
+      i <- 0;
+      
+      WHILE (i < 5) DO
+         OUTPUT "%d\t", arr[i];
+         i <- i + 1;
+      END;
+      OUTPUT "\n";
+
+      /* Bubble sort logic */
+      swapped <- 1;
+      j <- 0;
+      WHILE (swapped == 1) DO
+         swapped <- 0;
+         j <- j + 1;
+         i <- 0;
+         WHILE (i < 5 - j  ) DO
+            x <- i + 1;
+            IF (arr[i] > arr[x]) THEN
+               temp <- arr[i]; 
+               arr[i] <- arr[x];
+               arr[x] <- temp;
+               swapped <- 1;
+            END;
+            i <- i + 1;
+         END;
+      END;
+
+      /* Printing array after sorting */
+      OUTPUT "Sorted array:\n";
+      i <- 0;
+      WHILE (i < 5) DO
+         OUTPUT "%d\t", arr[i];
+         i <- i + 1;
+      END;
+      OUTPUT "\n";
+   END
+END
+
+SOURCE WITH 4 TUPLES:
+
+
+Source Line :  
+Source Line :  /* Sorting program - Bubble Sort */
+Source Line :  
+Source Line :  PROGRAM bubble
+Source Line :  /* Declarations of all variables */
+Source Line :  DECLARE
+Source Line :  INTEGER arr 5;    // Array holding values to be sorted
+		Tuple is: ('arr', 'MEMORY', '5', None)
+Source Line :  INTEGER swapped;  // swapped = 1 if a swap has been made
+		Tuple is: ('swapped', 'MEMORY', 1, None)
+Source Line :  INTEGER i;        // Counter
+		Tuple is: ('i', 'MEMORY', 1, None)
+Source Line :  INTEGER j;        // variables
+		Tuple is: ('j', 'MEMORY', 1, None)
+Source Line :  INTEGER temp;     // Temporary variable
+		Tuple is: ('temp', 'MEMORY', 1, None)
+Source Line :  INTEGER x;
+		Tuple is: ('x', 'MEMORY', 1, None)
+Source Line :  END
+Source Line :  
+Source Line :  /* The MAIN procedure. This will be executed first. */
+Source Line :  MAIN
+		Tuple is: (None, 'END DECLARATIONS', None, None)
+Source Line :  /* Assigning values to the array */
+Source Line :  arr[0] <- 112;
+		Tuple is: ('MAIN', 'LABEL', None, None)
+Source Line :  arr[1] <- 3;
+		Tuple is: ('arr', 'ISUBASSIGN', '112', '0')
+Source Line :  arr[2] <- -1389;
+		Tuple is: ('arr', 'ISUBASSIGN', '3', '1')
+Source Line :  arr[3] <- 79;
+		Tuple is: ('arr', 'ISUBASSIGN', '-1389', '2')
+Source Line :  arr[4] <- -639;
+		Tuple is: ('arr', 'ISUBASSIGN', '79', '3')
+Source Line :  
+Source Line :  /* Printing array before sorting */
+Source Line :  OUTPUT "Array before sorting:\n";
+		Tuple is: ('arr', 'ISUBASSIGN', '-639', '4')
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Array before sorting:\\n"', None)
+Source Line :  i <- 0;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+Source Line :  
+Source Line :  WHILE (i < 5) DO
+		Tuple is: ('i', 'IASSIGN', '0', None)
+		Tuple is: ('L$0', 'LABEL', None, None)
+		Tuple is: ('B$0', 'ILT', 'i', '5')
+Source Line :  OUTPUT "%d\t", arr[i];
+		Tuple is: ('L$1', 'CJUMP', 'B$0', None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"%d\\t"', None)
+		Tuple is: (None, 'OUTPUTSUBPARAMETER', 'arr', 'i')
+Source Line :  i <- i + 1;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: ('I$0', 'IADD', 'i', '1')
+Source Line :  END;
+		Tuple is: ('i', 'IASSIGN', 'I$0', None)
+		Tuple is: ('L$0', 'JUMP', None, None)
+		Tuple is: ('L$1', 'LABEL', None, None)
+Source Line :  OUTPUT "\n";
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"\\n"', None)
+Source Line :  
+Source Line :  /* Bubble sort logic */
+Source Line :  swapped <- 1;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+Source Line :  j <- 0;
+		Tuple is: ('swapped', 'IASSIGN', '1', None)
+Source Line :  WHILE (swapped == 1) DO
+		Tuple is: ('j', 'IASSIGN', '0', None)
+		Tuple is: ('L$2', 'LABEL', None, None)
+		Tuple is: ('B$1', 'IEQ', 'swapped', '1')
+Source Line :  swapped <- 0;
+		Tuple is: ('L$3', 'CJUMP', 'B$1', None)
+Source Line :  j <- j + 1;
+		Tuple is: ('swapped', 'IASSIGN', '0', None)
+		Tuple is: ('I$1', 'IADD', 'j', '1')
+Source Line :  i <- 0;
+		Tuple is: ('j', 'IASSIGN', 'I$1', None)
+Source Line :  WHILE (i < 5 - j  ) DO
+		Tuple is: ('i', 'IASSIGN', '0', None)
+		Tuple is: ('L$4', 'LABEL', None, None)
+		Tuple is: ('I$2', 'ISUB', '5', 'j')
+		Tuple is: ('B$2', 'ILT', 'i', 'I$2')
+Source Line :  x <- i + 1;
+		Tuple is: ('L$5', 'CJUMP', 'B$2', None)
+		Tuple is: ('I$3', 'IADD', 'i', '1')
+Source Line :  IF (arr[i] > arr[x]) THEN
+		Tuple is: ('x', 'IASSIGN', 'I$3', None)
+		Tuple is: ('I$4', 'SUBLOAD', 'arr', 'i')
+		Tuple is: ('I$5', 'SUBLOAD', 'arr', 'x')
+		Tuple is: ('B$3', 'IGT', 'I$4', 'I$5')
+Source Line :  temp <- arr[i];
+		Tuple is: ('L$6', 'CJUMP', 'B$3', None)
+		Tuple is: ('I$6', 'SUBLOAD', 'arr', 'i')
+Source Line :  arr[i] <- arr[x];
+		Tuple is: ('temp', 'IASSIGN', 'I$6', None)
+		Tuple is: ('I$7', 'SUBLOAD', 'arr', 'x')
+Source Line :  arr[x] <- temp;
+		Tuple is: ('arr', 'ISUBASSIGN', 'I$7', 'i')
+Source Line :  swapped <- 1;
+		Tuple is: ('arr', 'ISUBASSIGN', 'temp', 'x')
+Source Line :  END;
+		Tuple is: ('swapped', 'IASSIGN', '1', None)
+		Tuple is: ('L$6', 'LABEL', None, None)
+Source Line :  i <- i + 1;
+		Tuple is: ('I$8', 'IADD', 'i', '1')
+Source Line :  END;
+		Tuple is: ('i', 'IASSIGN', 'I$8', None)
+		Tuple is: ('L$4', 'JUMP', None, None)
+		Tuple is: ('L$5', 'LABEL', None, None)
+Source Line :  END;
+		Tuple is: ('L$2', 'JUMP', None, None)
+		Tuple is: ('L$3', 'LABEL', None, None)
+Source Line :  
+Source Line :  /* Printing array after sorting */
+Source Line :  OUTPUT "Sorted array:\n";
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Sorted array:\\n"', None)
+Source Line :  i <- 0;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+Source Line :  WHILE (i < 5) DO
+		Tuple is: ('i', 'IASSIGN', '0', None)
+		Tuple is: ('L$7', 'LABEL', None, None)
+		Tuple is: ('B$4', 'ILT', 'i', '5')
+Source Line :  OUTPUT "%d\t", arr[i];
+		Tuple is: ('L$8', 'CJUMP', 'B$4', None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"%d\\t"', None)
+		Tuple is: (None, 'OUTPUTSUBPARAMETER', 'arr', 'i')
+Source Line :  i <- i + 1;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: ('I$9', 'IADD', 'i', '1')
+Source Line :  END;
+		Tuple is: ('i', 'IASSIGN', 'I$9', None)
+		Tuple is: ('L$7', 'JUMP', None, None)
+		Tuple is: ('L$8', 'LABEL', None, None)
+Source Line :  OUTPUT "\n";
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"\\n"', None)
+Source Line :  END
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+Source Line :  END
+		Tuple is: ('bubble', 'END PROGRAM', None, None)
+Parse Complete
+
+ASSEMBLER LISTINGS WITH 4 TUPLES:
+
+
+segment .text
+	global  main
+
+main:
+enter 0,0
+pusha
+	mov dword [arr + 0*4], 112
+	mov dword [arr + 1*4], 3
+	mov dword [arr + 2*4], -1389
+	mov dword [arr + 3*4], 79
+	mov dword [arr + 4*4], -639
+	extern printf
+	push string0
+	call printf
+	add esp,4
+	mov dword [i], 0
+L$0:
+	mov edi, [i]
+	cmp edi, 5
+	jnl L$1
+	extern printf
+	mov edi, [i]
+	mov ebx, [arr+edi*4]
+	push ebx
+	push string1
+	call printf
+	add esp,8
+	mov edi, [i]
+	add edi, 1
+	mov [i], edi
+	JMP L$0
+L$1:
+	extern printf
+	push string2
+	call printf
+	add esp,4
+	mov dword [swapped], 1
+	mov dword [j], 0
+L$2:
+	mov edi, [swapped]
+	cmp edi, 1
+	jne L$3
+	mov dword [swapped], 0
+	mov edi, [j]
+	add edi, 1
+	mov [j], edi
+	mov dword [i], 0
+L$4:
+	mov edi, 5
+	sub edi, [j]
+	mov ebx, [i]
+	cmp ebx, edi
+	jnl L$5
+	mov edi, [i]
+	add edi, 1
+	mov [x], edi
+	mov edi, [i]
+	mov ebx, [arr+edi*4]
+	mov edi, [x]
+	mov esi, [arr+edi*4]
+	cmp ebx, esi
+	jng L$6
+	mov edi, [i]
+	mov ebx, [arr+edi*4]
+	mov [temp], ebx
+	mov edi, [x]
+	mov ebx, [arr+edi*4]
+	mov edi, [i]
+	mov  [arr+edi*4], ebx
+	mov edi, [x]
+	mov ebx, [temp]
+	mov  [arr+edi*4], ebx
+	mov dword [swapped], 1
+L$6:
+	mov edi, [i]
+	add edi, 1
+	mov [i], edi
+	JMP L$4
+L$5:
+	JMP L$2
+L$3:
+	extern printf
+	push string3
+	call printf
+	add esp,4
+	mov dword [i], 0
+L$7:
+	mov edi, [i]
+	cmp edi, 5
+	jnl L$8
+	extern printf
+	mov edi, [i]
+	mov ebx, [arr+edi*4]
+	push ebx
+	push string4
+	call printf
+	add esp,8
+	mov edi, [i]
+	add edi, 1
+	mov [i], edi
+	JMP L$7
+L$8:
+	extern printf
+	push string5
+	call printf
+	add esp,4
+popa 
+mov     eax, 0 
+leave
+ret
+
+
+
+
+segment .bss
+
+arr resd 5
+swapped resd 1
+i resd 1
+j resd 1
+temp resd 1
+x resd 1
+
+
+segment .data
+
+string0	db	`Array before sorting:\n`, 0
+string1	db	`%d\t`, 0
+string2	db	`\n`, 0
+string3	db	`Sorted array:\n`, 0
+string4	db	`%d\t`, 0
+string5	db	`\n`, 0
+
+OUTPUT:
+
+Array before sorting:
+112	3	-1389	79	-639	
+Sorted array:
+-1389	-639	3	79	112	
+
+
+
+Prog2_Extra_Call_By_Value.txt
+
+SOURCE:
+
+##+1+13 flags ##
+/* 
+   Dhaval Parmar	dkparma@clemson.edu
+   Akash Mudubagilu	amuduba@clemson.edu
+*/
+
+/* Extra Credit - Call By Value */
+
+PROGRAM call_by_value
+   DECLARE
+      /* The parameter that will be passed by value */
+      INTEGER a;
+   END
+   
+   /* The procedure that takes a value parameter */
+   PROCEDURE value_proc { VALUE INTEGER a }
+      a <- 0; // Changing value of parameter within the procedure
+      OUTPUT "Value of parameter in procedure call: %d\n", a;
+   END
+   
+   MAIN
+      a <- 4;
+      OUTPUT "Value of parameter before procedure call: %d\n", a;
+      CALL value_proc { VALUE a };
+      OUTPUT "Value of parameter after procedure call: %d\n", a;
+   END
+END
+
+SOURCE WITH 4 TUPLES:
+
+Milestone 5 report : 
+Dhaval Parmar 		 dkparma@clemson.edu
+Akash Mudubagilu 	 amuduba@clemson.edu
+executed at :  2012-04-29 07:28:29
+
+Source Line :  ##+1+13 flags ##
+Source Line :  /*
+Source Line :  Dhaval Parmar	dkparma@clemson.edu
+Source Line :  Akash Mudubagilu	amuduba@clemson.edu
+Source Line :  */
+
+
+Source Line :  
+Source Line :  /* Extra Credit - Call By Value */
+Source Line :  
+Source Line :  PROGRAM call_by_value
+Source Line :  DECLARE
+Source Line :  /* The parameter that will be passed by value */
+Source Line :  INTEGER a;
+		Tuple is: ('a', 'MEMORY', 1, None)
+Source Line :  END
+Source Line :  
+Source Line :  /* The procedure that takes a value parameter */
+Source Line :  PROCEDURE value_proc { VALUE INTEGER a }
+		Tuple is: (None, 'END DECLARATIONS', None, None)
+		Tuple is: ('value_proc', 'BEGIN PROCEDURE', None, None)
+		Tuple is: (None, 'BEGIN PARAMETER LIST', None, None)
+		Tuple is: ('a', 'FORMAL VALUE PARAMETER', 1, None)
+Source Line :  a <- 0; // Changing value of parameter within the procedure
+		Tuple is: (None, 'END PARAMETER LIST', None, None)
+Source Line :  OUTPUT "Value of parameter in procedure call: %d\n", a;
+		Tuple is: ('a', 'IASSIGN', '0', None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Value of parameter in procedure call: %d\\n"', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', 'a', None)
+Source Line :  END
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+Source Line :  
+Source Line :  MAIN
+		Tuple is: ('value_proc', 'END PROCEDURE', None, None)
+Source Line :  a <- 4;
+		Tuple is: ('MAIN', 'LABEL', None, None)
+Source Line :  OUTPUT "Value of parameter before procedure call: %d\n", a;
+		Tuple is: ('a', 'IASSIGN', '4', None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Value of parameter before procedure call: %d\\n"', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', 'a', None)
+Source Line :  CALL value_proc { VALUE a };
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: ('value_proc', 'CALL', None, None)
+		Tuple is: (None, 'BEGINACTUALPARAMETERLIST', None, None)
+		Tuple is: (None, 'ACTUALVPARAMETER', 'a', None)
+		Tuple is: ('value_proc', 'ENDACTUALPARAMETERLIST', None, None)
+Source Line :  OUTPUT "Value of parameter after procedure call: %d\n", a;
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Value of parameter after procedure call: %d\\n"', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', 'a', None)
+Source Line :  END
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+Source Line :  END
+		Tuple is: ('call_by_value', 'END PROGRAM', None, None)
+Parse Complete
+
+ASSEMBLER LISTINGS WITH 4 TUPLES:
+
+value_proc:
+	push ebp
+	mov ebp, esp
+	mov dword [ebp+8], 0
+	extern printf
+	mov edi, [ebp+8]
+	push edi
+	push string0
+	call printf
+	add esp,8
+	mov esp, ebp
+	pop ebp
+ret
+
+segment .text
+	global  main
+
+main:
+enter 0,0
+pusha
+	mov dword [a], 4
+	extern printf
+	mov edi, [a]
+	push edi
+	push string1
+	call printf
+	add esp,8
+	push dword [a]
+	call value_proc
+	add esp, 4
+	extern printf
+	mov edi, [a]
+	push edi
+	push string2
+	call printf
+	add esp,8
+popa 
+mov     eax, 0 
+leave
+ret
+
+
+
+
+segment .bss
+
+a resd 1
+
+
+segment .data
+
+string0	db	`Value of parameter in procedure call: %d\n`, 0
+string1	db	`Value of parameter before procedure call: %d\n`, 0
+string2	db	`Value of parameter after procedure call: %d\n`, 0
+
+OUTPUT:
+
+Value of parameter before procedure call: 4
+Value of parameter in procedure call: 0
+Value of parameter after procedure call: 4
+
+
+
+Prog3_Extra_Call_By_Reference.txt
+
+SOURCE:
+
+##+1+13 flags ##
+/* 
+   Dhaval Parmar	dkparma@clemson.edu
+   Akash Mudubagilu	amuduba@clemson.edu
+*/
+
+/* Extra Credit - Call By Reference */
+
+PROGRAM call_by_ref
+   DECLARE
+      /* The parameter that will be passed by reference */
+      INTEGER a;
+   END
+   
+   /* The procedure that takes a reference parameter */
+   PROCEDURE reference_proc { REFERENCE INTEGER a }
+      a <- 0; // Changing value of parameter within the procedure
+      OUTPUT "Value of parameter in procedure call: %d\n", a;
+   END
+   
+   MAIN
+      a <- 4;
+      OUTPUT "Value of parameter before procedure call: %d\n", a;
+      CALL reference_proc { REFERENCE a };
+      OUTPUT "Value of parameter after procedure call: %d\n", a;
+   END
+END
+
+SOURCE WITH 4 TUPLES:
+
+Milestone 5 report : 
+Dhaval Parmar 		 dkparma@clemson.edu
+Akash Mudubagilu 	 amuduba@clemson.edu
+executed at :  2012-04-29 07:28:29
+
+Source Line :  ##+1+13 flags ##
+Source Line :  /*
+Source Line :  Dhaval Parmar	dkparma@clemson.edu
+Source Line :  Akash Mudubagilu	amuduba@clemson.edu
+Source Line :  */
+
+
+Source Line :  
+Source Line :  /* Extra Credit - Call By Reference */
+Source Line :  
+Source Line :  PROGRAM call_by_ref
+Source Line :  DECLARE
+Source Line :  /* The parameter that will be passed by reference */
+Source Line :  INTEGER a;
+		Tuple is: ('a', 'MEMORY', 1, None)
+Source Line :  END
+Source Line :  
+Source Line :  /* The procedure that takes a reference parameter */
+Source Line :  PROCEDURE reference_proc { REFERENCE INTEGER a }
+		Tuple is: (None, 'END DECLARATIONS', None, None)
+		Tuple is: ('reference_proc', 'BEGIN PROCEDURE', None, None)
+		Tuple is: (None, 'BEGIN PARAMETER LIST', None, None)
+		Tuple is: ('a', 'FORMAL REFERENCE PARAMETER', 1, None)
+Source Line :  a <- 0; // Changing value of parameter within the procedure
+		Tuple is: (None, 'END PARAMETER LIST', None, None)
+Source Line :  OUTPUT "Value of parameter in procedure call: %d\n", a;
+		Tuple is: ('a', 'IASSIGN', '0', None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Value of parameter in procedure call: %d\\n"', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', 'a', None)
+Source Line :  END
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+Source Line :  
+Source Line :  MAIN
+		Tuple is: ('reference_proc', 'END PROCEDURE', None, None)
+Source Line :  a <- 4;
+		Tuple is: ('MAIN', 'LABEL', None, None)
+Source Line :  OUTPUT "Value of parameter before procedure call: %d\n", a;
+		Tuple is: ('a', 'IASSIGN', '4', None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Value of parameter before procedure call: %d\\n"', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', 'a', None)
+Source Line :  CALL reference_proc { REFERENCE a };
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: ('reference_proc', 'CALL', None, None)
+		Tuple is: (None, 'BEGINACTUALPARAMETERLIST', None, None)
+		Tuple is: (None, 'ACTUALRPARAMETER', 'a', None)
+		Tuple is: ('reference_proc', 'ENDACTUALPARAMETERLIST', None, None)
+Source Line :  OUTPUT "Value of parameter after procedure call: %d\n", a;
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Value of parameter after procedure call: %d\\n"', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', 'a', None)
+Source Line :  END
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+Source Line :  END
+		Tuple is: ('call_by_ref', 'END PROGRAM', None, None)
+Parse Complete
+
+ASSEMBLER LISTINGS WITH 4 TUPLES:
+
+reference_proc:
+	push ebp
+	mov ebp, esp
+	mov edi, [ebp+8]
+	mov dword [edi], 0
+	extern printf
+	mov ebx, [edi]
+	push ebx
+	push string0
+	call printf
+	add esp,8
+	mov esp, ebp
+	pop ebp
+ret
+
+segment .text
+	global  main
+
+main:
+enter 0,0
+pusha
+	mov dword [a], 4
+	extern printf
+	mov ebx, [a]
+	push ebx
+	push string1
+	call printf
+	add esp,8
+	push dword a
+	call reference_proc
+	add esp, 4
+	extern printf
+	mov ebx, [a]
+	push ebx
+	push string2
+	call printf
+	add esp,8
+popa 
+mov     eax, 0 
+leave
+ret
+
+
+
+
+segment .bss
+
+a resd 1
+
+
+segment .data
+
+string0	db	`Value of parameter in procedure call: %d\n`, 0
+string1	db	`Value of parameter before procedure call: %d\n`, 0
+string2	db	`Value of parameter after procedure call: %d\n`, 0
+
+OUTPUT:
+
+Value of parameter before procedure call: 4
+Value of parameter in procedure call: 0
+Value of parameter after procedure call: 0
+
+
+
+Prog4_Extra_Recursion.txt
+
+SOURCE:
+
+##+1+13 flags ##
+/* 
+   Dhaval Parmar	dkparma@clemson.edu
+   Akash Mudubagilu	amuduba@clemson.edu
+*/
+
+/* Extra Credit - Recursion */
+
+PROGRAM recursion
+   DECLARE      
+      INTEGER count; // Recursion counter
+   END
+
+   /* The procedure that is called recursively */
+   PROCEDURE recurse_this { VALUE INTEGER count }
+      OUTPUT "Recursion count: %d\n", count;
+      count <- count - 1;
+      IF (count >= 0) THEN
+         /* Calling itself (recursion) */
+         CALL recurse_this { VALUE count };
+      END;
+   END
+
+   MAIN
+      count <- 10;
+      CALL recurse_this { VALUE count };
+   END
+END
+
+SOURCE WITH 4 TUPLES:
+
+Milestone 5 report : 
+Dhaval Parmar 		 dkparma@clemson.edu
+Akash Mudubagilu 	 amuduba@clemson.edu
+executed at :  2012-04-29 07:28:30
+
+Source Line :  ##+1+13 flags ##
+Source Line :  /*
+Source Line :  Dhaval Parmar	dkparma@clemson.edu
+Source Line :  Akash Mudubagilu	amuduba@clemson.edu
+Source Line :  */
+
+
+Source Line :  
+Source Line :  /* Extra Credit - Recursion */
+Source Line :  
+Source Line :  PROGRAM recursion
+Source Line :  DECLARE
+Source Line :  INTEGER count; // Recursion counter
+		Tuple is: ('count', 'MEMORY', 1, None)
+Source Line :  END
+Source Line :  
+Source Line :  /* The procedure that is called recursively */
+Source Line :  PROCEDURE recurse_this { VALUE INTEGER count }
+		Tuple is: (None, 'END DECLARATIONS', None, None)
+		Tuple is: ('recurse_this', 'BEGIN PROCEDURE', None, None)
+		Tuple is: (None, 'BEGIN PARAMETER LIST', None, None)
+		Tuple is: ('count', 'FORMAL VALUE PARAMETER', 1, None)
+Source Line :  OUTPUT "Recursion count: %d\n", count;
+		Tuple is: (None, 'END PARAMETER LIST', None, None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Recursion count: %d\\n"', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', 'count', None)
+Source Line :  count <- count - 1;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: ('I$0', 'ISUB', 'count', '1')
+Source Line :  IF (count >= 0) THEN
+		Tuple is: ('count', 'IASSIGN', 'I$0', None)
+$ found in tuple :  ('count', 'IASSIGN', 'I$0', None)
+register holding variable :  edi
+		Tuple is: ('B$0', 'IGE', 'count', '0')
+Source Line :  /* Calling itself (recursion) */
+Source Line :  CALL recurse_this { VALUE count };
+		Tuple is: ('L$0', 'CJUMP', 'B$0', None)
+		Tuple is: ('recurse_this', 'CALL', None, None)
+		Tuple is: (None, 'BEGINACTUALPARAMETERLIST', None, None)
+		Tuple is: (None, 'ACTUALVPARAMETER', 'count', None)
+		Tuple is: ('recurse_this', 'ENDACTUALPARAMETERLIST', None, None)
+Source Line :  END;
+		Tuple is: ('L$0', 'LABEL', None, None)
+Source Line :  END
+Source Line :  
+Source Line :  MAIN
+		Tuple is: ('recurse_this', 'END PROCEDURE', None, None)
+Source Line :  count <- 10;
+		Tuple is: ('MAIN', 'LABEL', None, None)
+Source Line :  CALL recurse_this { VALUE count };
+		Tuple is: ('count', 'IASSIGN', '10', None)
+		Tuple is: ('recurse_this', 'CALL', None, None)
+		Tuple is: (None, 'BEGINACTUALPARAMETERLIST', None, None)
+		Tuple is: (None, 'ACTUALVPARAMETER', 'count', None)
+		Tuple is: ('recurse_this', 'ENDACTUALPARAMETERLIST', None, None)
+Source Line :  END
+Source Line :  END
+		Tuple is: ('recursion', 'END PROGRAM', None, None)
+Parse Complete
+
+ASSEMBLER LISTINGS WITH 4 TUPLES:
+
+recurse_this:
+	push ebp
+	mov ebp, esp
+	extern printf
+	mov edi, [ebp+8]
+	push edi
+	push string0
+	call printf
+	add esp,8
+	mov edi, [ebp+8]
+	sub edi, 1
+	mov [ebp+8], edi
+	mov edi, [ebp+8]
+	cmp edi, 0
+	jl L$0
+	push dword [ebp+8]
+	call recurse_this
+	add esp, 4
+L$0:
+	mov esp, ebp
+	pop ebp
+ret
+
+segment .text
+	global  main
+
+main:
+enter 0,0
+pusha
+	mov dword [count], 10
+	push dword [count]
+	call recurse_this
+	add esp, 4
+popa 
+mov     eax, 0 
+leave
+ret
+
+
+
+
+segment .bss
+
+count resd 1
+
+
+segment .data
+
+string0	db	`Recursion count: %d\n`, 0
+
+OUTPUT:
+
+Recursion count: 10
+Recursion count: 9
+Recursion count: 8
+Recursion count: 7
+Recursion count: 6
+Recursion count: 5
+Recursion count: 4
+Recursion count: 3
+Recursion count: 2
+Recursion count: 1
+Recursion count: 0
+
+
+
+Prog6_Extra_Static_Scope.txt
+
+SOURCE:
+
+##+1+13 flags ##
+/* 
+   Dhaval Parmar	dkparma@clemson.edu
+   Akash Mudubagilu	amuduba@clemson.edu
+*/
+
+/* Extra Credit - Static Scope */
+
+PROGRAM static_scope
+   DECLARE
+      /* Global variables */
+      INTEGER a;
+      INTEGER b;
+   END
+
+   PROCEDURE assign
+      DECLARE
+         INTEGER a; // Declaring global 'a' locally
+      END
+      a <- 10;
+      b <- 20;
+      OUTPUT "Variables within procedure:\n";
+      OUTPUT "a = %d, b = %d\n", a, b;
+   END
+
+   MAIN
+      /* Assigning values to global variables */
+      a <- 5;
+      b <- 7;
+
+      OUTPUT "Variables before procedure call:\n";
+      OUTPUT "a = %d, b = %d\n", a, b;
+
+      CALL assign;
+
+      OUTPUT "Variables after procedure call:\n";
+      OUTPUT "a = %d, b = %d\n", a, b;      
+   END
+END
+
+SOURCE WITH 4 TUPLES:
+
+Milestone 5 report : 
+Dhaval Parmar 		 dkparma@clemson.edu
+Akash Mudubagilu 	 amuduba@clemson.edu
+executed at :  2012-04-29 07:28:30
+
+Source Line :  ##+1+13 flags ##
+Source Line :  /*
+Source Line :  Dhaval Parmar	dkparma@clemson.edu
+Source Line :  Akash Mudubagilu	amuduba@clemson.edu
+Source Line :  */
+
+
+Source Line :  
+Source Line :  /* Extra Credit - Static Scope */
+Source Line :  
+Source Line :  PROGRAM static_scope
+Source Line :  DECLARE
+Source Line :  /* Global variables */
+Source Line :  INTEGER a;
+		Tuple is: ('a', 'MEMORY', 1, None)
+Source Line :  INTEGER b;
+		Tuple is: ('b', 'MEMORY', 1, None)
+Source Line :  END
+Source Line :  
+Source Line :  PROCEDURE assign
+		Tuple is: (None, 'END DECLARATIONS', None, None)
+Source Line :  DECLARE
+		Tuple is: ('assign', 'BEGIN PROCEDURE', None, None)
+		Tuple is: (None, 'NO FORMAL PARAMETERS', None, None)
+Source Line :  INTEGER a; // Declaring global 'a' locally
+		Tuple is: ('a', 'MEMORY', 1, None)
+Source Line :  END
+Source Line :  a <- 10;
+		Tuple is: (None, 'END DECLARATIONS', None, None)
+Source Line :  b <- 20;
+		Tuple is: ('a', 'IASSIGN', '10', None)
+Source Line :  OUTPUT "Variables within procedure:\n";
+		Tuple is: ('b', 'IASSIGN', '20', None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Variables within procedure:\\n"', None)
+Source Line :  OUTPUT "a = %d, b = %d\n", a, b;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"a = %d, b = %d\\n"', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', 'a', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', 'b', None)
+Source Line :  END
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+Source Line :  
+Source Line :  MAIN
+		Tuple is: ('assign', 'END PROCEDURE', None, None)
+Source Line :  /* Assigning values to global variables */
+Source Line :  a <- 5;
+		Tuple is: ('MAIN', 'LABEL', None, None)
+Source Line :  b <- 7;
+		Tuple is: ('a', 'IASSIGN', '5', None)
+Source Line :  
+Source Line :  OUTPUT "Variables before procedure call:\n";
+		Tuple is: ('b', 'IASSIGN', '7', None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Variables before procedure call:\\n"', None)
+Source Line :  OUTPUT "a = %d, b = %d\n", a, b;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"a = %d, b = %d\\n"', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', 'a', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', 'b', None)
+Source Line :  
+Source Line :  CALL assign;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: ('assign', 'CALL', None, None)
+		Tuple is: (None, 'NOACTUALPARAMETERS', None, None)
+Source Line :  
+Source Line :  OUTPUT "Variables after procedure call:\n";
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Variables after procedure call:\\n"', None)
+Source Line :  OUTPUT "a = %d, b = %d\n", a, b;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"a = %d, b = %d\\n"', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', 'a', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', 'b', None)
+Source Line :  END
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+Source Line :  END
+		Tuple is: ('static_scope', 'END PROGRAM', None, None)
+Parse Complete
+
+ASSEMBLER LISTINGS WITH 4 TUPLES:
+
+assign:
+	push ebp
+	mov ebp, esp
+	sub esp, 4
+	mov dword [ebp-4], 10
+	mov dword [b], 20
+	extern printf
+	push string0
+	call printf
+	add esp,4
+	extern printf
+	mov edi, [ebp-4]
+	mov ebx, [b]
+	push ebx
+	push edi
+	push string1
+	call printf
+	add esp,12
+	mov esp, ebp
+	pop ebp
+ret
+
+segment .text
+	global  main
+
+main:
+enter 0,0
+pusha
+	mov dword [a], 5
+	mov dword [b], 7
+	extern printf
+	push string2
+	call printf
+	add esp,4
+	extern printf
+	mov edi, [a]
+	mov ebx, [b]
+	push ebx
+	push edi
+	push string3
+	call printf
+	add esp,12
+	call assign
+	extern printf
+	push string4
+	call printf
+	add esp,4
+	extern printf
+	mov edi, [a]
+	mov ebx, [b]
+	push ebx
+	push edi
+	push string5
+	call printf
+	add esp,12
+popa 
+mov     eax, 0 
+leave
+ret
+
+
+
+
+segment .bss
+
+a resd 1
+b resd 1
+
+
+segment .data
+
+string0	db	`Variables within procedure:\n`, 0
+string1	db	`a = %d, b = %d\n`, 0
+string2	db	`Variables before procedure call:\n`, 0
+string3	db	`a = %d, b = %d\n`, 0
+string4	db	`Variables after procedure call:\n`, 0
+string5	db	`a = %d, b = %d\n`, 0
+
+OUTPUT:
+
+Variables before procedure call:
+a = 5, b = 7
+Variables within procedure:
+a = 10, b = 20
+Variables after procedure call:
+a = 5, b = 20
+
+
+
+Prog7_Extra_Matrices.txt
+
+SOURCE:
+
+##+1+13 flags ##
+/* 
+   Dhaval Parmar	dkparma@clemson.edu
+   Akash Mudubagilu	amuduba@clemson.edu
+*/
+
+/* Extra Credit - Matrices */
+
+PROGRAM matrices
+   DECLARE
+      INTEGER mat1 4 :: 4; // First 4 by 4 matrix
+      INTEGER mat2 4 :: 4; // Second 4 by 4 matrix
+      INTEGER mat3 4 :: 4; // Result 4 by 4 matrix
+      INTEGER i; // Counter
+      INTEGER j; // variables
+   END
+
+   MAIN
+      /* Assigning values to the two matrices */
+      OUTPUT "Assigning values to matrices\n";
+      i <- 0;
+      WHILE (i < 4) DO
+         j <- 0;
+         WHILE (j < 4) DO
+            //mat1[i:j] <- j; 
+            //mat2[i:j] <- ( i + 1 ) * ( j + 1 );
+            mat1[i:j] <- 1;
+            mat2[i:j] <- 2;
+            j <- j + 1;            
+         END;
+         i <- i + 1;
+      END;
+
+      OUTPUT "Matrix 1:\n";
+      i <- 0;
+      WHILE (i < 4) DO
+         j <- 0;
+         WHILE (j < 4) DO
+            OUTPUT "%d\t", mat1[i:j];
+            j <- j + 1;            
+         END;
+         OUTPUT "\n";
+         i <- i + 1;
+      END;
+
+      OUTPUT "Matrix 2:\n";
+      i <- 0;
+      WHILE (i < 4) DO
+         j <- 0;
+         WHILE (j < 4) DO
+            OUTPUT "%d\t", mat2[i:j];
+            j <- j + 1;            
+         END;
+         OUTPUT "\n";
+         i <- i + 1;
+      END;
+
+      /* Adding mat1 and mat2 and storing result in mat3 */
+      i <- 0;
+      WHILE (i < 4) DO
+         j <- 0;
+         WHILE (j < 4) DO
+            mat3[i:j] <- mat1[i:j] + mat2[i:j];
+            j <- j + 1;            
+         END;
+         i <- i + 1;
+      END;
+
+      OUTPUT "Matrix 3 = Matrix 1 + Matrix 2:\n";
+      i <- 0;
+      WHILE (i < 4) DO
+         j <- 0;
+         WHILE (j < 4) DO
+            OUTPUT "%d\t", mat3[i:j];
+            j <- j + 1;            
+         END;
+         OUTPUT "\n";
+         i <- i + 1;
+      END;
+   END
+END
+
+SOURCE WITH 4 TUPLES:
+
+Milestone 5 report : 
+Dhaval Parmar 		 dkparma@clemson.edu
+Akash Mudubagilu 	 amuduba@clemson.edu
+executed at :  2012-04-29 07:28:30
+
+Source Line :  ##+1+13 flags ##
+Source Line :  /*
+Source Line :  Dhaval Parmar	dkparma@clemson.edu
+Source Line :  Akash Mudubagilu	amuduba@clemson.edu
+Source Line :  */
+
+
+Source Line :  
+Source Line :  /* Extra Credit - Matrices */
+Source Line :  
+Source Line :  PROGRAM matrices
+Source Line :  DECLARE
+Source Line :  INTEGER mat1 4 :: 4; // First 4 by 4 matrix
+		Tuple is: ('mat1', 'MEMORY', '4', '4')
+Source Line :  INTEGER mat2 4 :: 4; // Second 4 by 4 matrix
+		Tuple is: ('mat2', 'MEMORY', '4', '4')
+Source Line :  INTEGER mat3 4 :: 4; // Result 4 by 4 matrix
+		Tuple is: ('mat3', 'MEMORY', '4', '4')
+Source Line :  INTEGER i; // Counter
+		Tuple is: ('i', 'MEMORY', 1, None)
+Source Line :  INTEGER j; // variables
+		Tuple is: ('j', 'MEMORY', 1, None)
+Source Line :  END
+Source Line :  
+Source Line :  MAIN
+		Tuple is: (None, 'END DECLARATIONS', None, None)
+Source Line :  /* Assigning values to the two matrices */
+Source Line :  OUTPUT "Assigning values to matrices\n";
+		Tuple is: ('MAIN', 'LABEL', None, None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Assigning values to matrices\\n"', None)
+Source Line :  i <- 0;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+Source Line :  WHILE (i < 4) DO
+		Tuple is: ('i', 'IASSIGN', '0', None)
+		Tuple is: ('L$0', 'LABEL', None, None)
+		Tuple is: ('B$0', 'ILT', 'i', '4')
+Source Line :  j <- 0;
+		Tuple is: ('L$1', 'CJUMP', 'B$0', None)
+Source Line :  WHILE (j < 4) DO
+		Tuple is: ('j', 'IASSIGN', '0', None)
+		Tuple is: ('L$2', 'LABEL', None, None)
+		Tuple is: ('B$1', 'ILT', 'j', '4')
+Source Line :  //mat1[i:j] <- j;
+Source Line :  //mat2[i:j] <- ( i + 1 ) * ( j + 1 );
+Source Line :  mat1[i:j] <- 1;
+		Tuple is: ('L$3', 'CJUMP', 'B$1', None)
+Source Line :  mat2[i:j] <- 2;
+		Tuple is: ('I$0', 'IMULT', '4', 'i')
+		Tuple is: ('I$1', 'IADD', 'I$0', 'j')
+		Tuple is: ('mat1', 'ISUBASSIGN', '1', 'I$1')
+Source Line :  j <- j + 1;
+		Tuple is: ('I$2', 'IMULT', '4', 'i')
+		Tuple is: ('I$3', 'IADD', 'I$2', 'j')
+		Tuple is: ('mat2', 'ISUBASSIGN', '2', 'I$3')
+		Tuple is: ('I$4', 'IADD', 'j', '1')
+Source Line :  END;
+		Tuple is: ('j', 'IASSIGN', 'I$4', None)
+		Tuple is: ('L$2', 'JUMP', None, None)
+		Tuple is: ('L$3', 'LABEL', None, None)
+Source Line :  i <- i + 1;
+		Tuple is: ('I$5', 'IADD', 'i', '1')
+Source Line :  END;
+		Tuple is: ('i', 'IASSIGN', 'I$5', None)
+		Tuple is: ('L$0', 'JUMP', None, None)
+		Tuple is: ('L$1', 'LABEL', None, None)
+Source Line :  
+Source Line :  OUTPUT "Matrix 1:\n";
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Matrix 1:\\n"', None)
+Source Line :  i <- 0;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+Source Line :  WHILE (i < 4) DO
+		Tuple is: ('i', 'IASSIGN', '0', None)
+		Tuple is: ('L$4', 'LABEL', None, None)
+		Tuple is: ('B$2', 'ILT', 'i', '4')
+Source Line :  j <- 0;
+		Tuple is: ('L$5', 'CJUMP', 'B$2', None)
+Source Line :  WHILE (j < 4) DO
+		Tuple is: ('j', 'IASSIGN', '0', None)
+		Tuple is: ('L$6', 'LABEL', None, None)
+		Tuple is: ('B$3', 'ILT', 'j', '4')
+Source Line :  OUTPUT "%d\t", mat1[i:j];
+		Tuple is: ('L$7', 'CJUMP', 'B$3', None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"%d\\t"', None)
+		Tuple is: ('I$6', 'IMULT', '4', 'i')
+		Tuple is: ('I$7', 'IADD', 'I$6', 'j')
+		Tuple is: (None, 'OUTPUTSUBPARAMETER', 'mat1', 'I$7')
+Source Line :  j <- j + 1;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: ('I$8', 'IADD', 'j', '1')
+Source Line :  END;
+		Tuple is: ('j', 'IASSIGN', 'I$8', None)
+		Tuple is: ('L$6', 'JUMP', None, None)
+		Tuple is: ('L$7', 'LABEL', None, None)
+Source Line :  OUTPUT "\n";
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"\\n"', None)
+Source Line :  i <- i + 1;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: ('I$9', 'IADD', 'i', '1')
+Source Line :  END;
+		Tuple is: ('i', 'IASSIGN', 'I$9', None)
+		Tuple is: ('L$4', 'JUMP', None, None)
+		Tuple is: ('L$5', 'LABEL', None, None)
+Source Line :  
+Source Line :  OUTPUT "Matrix 2:\n";
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Matrix 2:\\n"', None)
+Source Line :  i <- 0;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+Source Line :  WHILE (i < 4) DO
+		Tuple is: ('i', 'IASSIGN', '0', None)
+		Tuple is: ('L$8', 'LABEL', None, None)
+		Tuple is: ('B$4', 'ILT', 'i', '4')
+Source Line :  j <- 0;
+		Tuple is: ('L$9', 'CJUMP', 'B$4', None)
+Source Line :  WHILE (j < 4) DO
+		Tuple is: ('j', 'IASSIGN', '0', None)
+		Tuple is: ('L$10', 'LABEL', None, None)
+		Tuple is: ('B$5', 'ILT', 'j', '4')
+Source Line :  OUTPUT "%d\t", mat2[i:j];
+		Tuple is: ('L$11', 'CJUMP', 'B$5', None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"%d\\t"', None)
+		Tuple is: ('I$10', 'IMULT', '4', 'i')
+		Tuple is: ('I$11', 'IADD', 'I$10', 'j')
+		Tuple is: (None, 'OUTPUTSUBPARAMETER', 'mat2', 'I$11')
+Source Line :  j <- j + 1;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: ('I$12', 'IADD', 'j', '1')
+Source Line :  END;
+		Tuple is: ('j', 'IASSIGN', 'I$12', None)
+		Tuple is: ('L$10', 'JUMP', None, None)
+		Tuple is: ('L$11', 'LABEL', None, None)
+Source Line :  OUTPUT "\n";
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"\\n"', None)
+Source Line :  i <- i + 1;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: ('I$13', 'IADD', 'i', '1')
+Source Line :  END;
+		Tuple is: ('i', 'IASSIGN', 'I$13', None)
+		Tuple is: ('L$8', 'JUMP', None, None)
+		Tuple is: ('L$9', 'LABEL', None, None)
+Source Line :  
+Source Line :  /* Adding mat1 and mat2 and storing result in mat3 */
+Source Line :  i <- 0;
+Source Line :  WHILE (i < 4) DO
+		Tuple is: ('i', 'IASSIGN', '0', None)
+		Tuple is: ('L$12', 'LABEL', None, None)
+		Tuple is: ('B$6', 'ILT', 'i', '4')
+Source Line :  j <- 0;
+		Tuple is: ('L$13', 'CJUMP', 'B$6', None)
+Source Line :  WHILE (j < 4) DO
+		Tuple is: ('j', 'IASSIGN', '0', None)
+		Tuple is: ('L$14', 'LABEL', None, None)
+		Tuple is: ('B$7', 'ILT', 'j', '4')
+Source Line :  mat3[i:j] <- mat1[i:j] + mat2[i:j];
+		Tuple is: ('L$15', 'CJUMP', 'B$7', None)
+		Tuple is: ('I$14', 'IMULT', '4', 'i')
+		Tuple is: ('I$15', 'IADD', 'I$14', 'j')
+		Tuple is: ('I$16', 'SUBLOAD', 'mat1', 'I$15')
+		Tuple is: ('I$17', 'IMULT', '4', 'i')
+		Tuple is: ('I$18', 'IADD', 'I$17', 'j')
+		Tuple is: ('I$19', 'SUBLOAD', 'mat2', 'I$18')
+		Tuple is: ('I$20', 'IADD', 'I$16', 'I$19')
+Source Line :  j <- j + 1;
+		Tuple is: ('I$21', 'IMULT', '4', 'i')
+		Tuple is: ('I$22', 'IADD', 'I$21', 'j')
+		Tuple is: ('mat3', 'ISUBASSIGN', 'I$20', 'I$22')
+		Tuple is: ('I$23', 'IADD', 'j', '1')
+Source Line :  END;
+		Tuple is: ('j', 'IASSIGN', 'I$23', None)
+		Tuple is: ('L$14', 'JUMP', None, None)
+		Tuple is: ('L$15', 'LABEL', None, None)
+Source Line :  i <- i + 1;
+		Tuple is: ('I$24', 'IADD', 'i', '1')
+Source Line :  END;
+		Tuple is: ('i', 'IASSIGN', 'I$24', None)
+		Tuple is: ('L$12', 'JUMP', None, None)
+		Tuple is: ('L$13', 'LABEL', None, None)
+Source Line :  
+Source Line :  OUTPUT "Matrix 3 = Matrix 1 + Matrix 2:\n";
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"Matrix 3 = Matrix 1 + Matrix 2:\\n"', None)
+Source Line :  i <- 0;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+Source Line :  WHILE (i < 4) DO
+		Tuple is: ('i', 'IASSIGN', '0', None)
+		Tuple is: ('L$16', 'LABEL', None, None)
+		Tuple is: ('B$8', 'ILT', 'i', '4')
+Source Line :  j <- 0;
+		Tuple is: ('L$17', 'CJUMP', 'B$8', None)
+Source Line :  WHILE (j < 4) DO
+		Tuple is: ('j', 'IASSIGN', '0', None)
+		Tuple is: ('L$18', 'LABEL', None, None)
+		Tuple is: ('B$9', 'ILT', 'j', '4')
+Source Line :  OUTPUT "%d\t", mat3[i:j];
+		Tuple is: ('L$19', 'CJUMP', 'B$9', None)
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"%d\\t"', None)
+		Tuple is: ('I$25', 'IMULT', '4', 'i')
+		Tuple is: ('I$26', 'IADD', 'I$25', 'j')
+		Tuple is: (None, 'OUTPUTSUBPARAMETER', 'mat3', 'I$26')
+Source Line :  j <- j + 1;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: ('I$27', 'IADD', 'j', '1')
+Source Line :  END;
+		Tuple is: ('j', 'IASSIGN', 'I$27', None)
+		Tuple is: ('L$18', 'JUMP', None, None)
+		Tuple is: ('L$19', 'LABEL', None, None)
+Source Line :  OUTPUT "\n";
+		Tuple is: (None, 'CALL', 'printf', None)
+		Tuple is: (None, 'OUTPUTPARAMETER', '"\\n"', None)
+Source Line :  i <- i + 1;
+		Tuple is: ('printf', 'ENDOUTPUTPARAMETERS', None, None)
+		Tuple is: ('I$28', 'IADD', 'i', '1')
+Source Line :  END;
+		Tuple is: ('i', 'IASSIGN', 'I$28', None)
+		Tuple is: ('L$16', 'JUMP', None, None)
+		Tuple is: ('L$17', 'LABEL', None, None)
+Source Line :  END
+Source Line :  END
+		Tuple is: ('matrices', 'END PROGRAM', None, None)
+Parse Complete
+
+ASSEMBLER LISTINGS WITH 4 TUPLES:
+
+
+segment .text
+	global  main
+
+main:
+enter 0,0
+pusha
+	extern printf
+	push string0
+	call printf
+	add esp,4
+	mov dword [i], 0
+L$0:
+	mov edi, [i]
+	cmp edi, 4
+	jnl L$1
+	mov dword [j], 0
+L$2:
+	mov edi, [j]
+	cmp edi, 4
+	jnl L$3
+	mov eax, 4
+	imul eax, [i]
+	mov edi, eax
+	add edi, [j]
+	mov dword [mat1+edi*4], 1
+	mov eax, 4
+	imul eax, [i]
+	mov edi, eax
+	add edi, [j]
+	mov dword [mat2+edi*4], 2
+	mov edi, [j]
+	add edi, 1
+	mov [j], edi
+	JMP L$2
+L$3:
+	mov edi, [i]
+	add edi, 1
+	mov [i], edi
+	JMP L$0
+L$1:
+	extern printf
+	push string1
+	call printf
+	add esp,4
+	mov dword [i], 0
+L$4:
+	mov edi, [i]
+	cmp edi, 4
+	jnl L$5
+	mov dword [j], 0
+L$6:
+	mov edi, [j]
+	cmp edi, 4
+	jnl L$7
+	extern printf
+	mov eax, 4
+	imul eax, [i]
+	mov edi, eax
+	add edi, [j]
+	mov ecx, [mat1+edi*4]
+	push ecx
+	push string2
+	call printf
+	add esp,8
+	mov edi, [j]
+	add edi, 1
+	mov [j], edi
+	JMP L$6
+L$7:
+	extern printf
+	push string3
+	call printf
+	add esp,4
+	mov edi, [i]
+	add edi, 1
+	mov [i], edi
+	JMP L$4
+L$5:
+	extern printf
+	push string4
+	call printf
+	add esp,4
+	mov dword [i], 0
+L$8:
+	mov edi, [i]
+	cmp edi, 4
+	jnl L$9
+	mov dword [j], 0
+L$10:
+	mov edi, [j]
+	cmp edi, 4
+	jnl L$11
+	extern printf
+	mov eax, 4
+	imul eax, [i]
+	mov edi, eax
+	add edi, [j]
+	mov ecx, [mat2+edi*4]
+	push ecx
+	push string5
+	call printf
+	add esp,8
+	mov edi, [j]
+	add edi, 1
+	mov [j], edi
+	JMP L$10
+L$11:
+	extern printf
+	push string6
+	call printf
+	add esp,4
+	mov edi, [i]
+	add edi, 1
+	mov [i], edi
+	JMP L$8
+L$9:
+	mov dword [i], 0
+L$12:
+	mov edi, [i]
+	cmp edi, 4
+	jnl L$13
+	mov dword [j], 0
+L$14:
+	mov edi, [j]
+	cmp edi, 4
+	jnl L$15
+	mov eax, 4
+	imul eax, [i]
+	mov edi, eax
+	add edi, [j]
+	mov ecx,  [mat1+edi*4]
+	mov eax, 4
+	imul eax, [i]
+	mov edi, eax
+	add edi, [j]
+	mov ebx,  [mat2+edi*4]
+	add ecx, ebx
+	mov eax, 4
+	imul eax, [i]
+	mov edi, eax
+	add edi, [j]
+	mov  [mat3+edi*4],ecx
+	mov edi, [j]
+	add edi, 1
+	mov [j], edi
+	JMP L$14
+L$15:
+	mov edi, [i]
+	add edi, 1
+	mov [i], edi
+	JMP L$12
+L$13:
+	extern printf
+	push string7
+	call printf
+	add esp,4
+	mov dword [i], 0
+L$16:
+	mov edi, [i]
+	cmp edi, 4
+	jnl L$17
+	mov dword [j], 0
+L$18:
+	mov edi, [j]
+	cmp edi, 4
+	jnl L$19
+	extern printf
+	mov eax, 4
+	imul eax, [i]
+	mov edi, eax
+	add edi, [j]
+	mov ebx, [mat3+edi*4]
+	push ebx
+	push string8
+	call printf
+	add esp,8
+	mov edi, [j]
+	add edi, 1
+	mov [j], edi
+	JMP L$18
+L$19:
+	extern printf
+	push string9
+	call printf
+	add esp,4
+	mov edi, [i]
+	add edi, 1
+	mov [i], edi
+	JMP L$16
+L$17:
+popa 
+mov     eax, 0 
+leave
+ret
+
+
+
+
+segment .bss
+
+mat1 resd 16
+mat2 resd 16
+mat3 resd 16
+i resd 1
+j resd 1
+
+
+segment .data
+
+string0	db	`Assigning values to matrices\n`, 0
+string1	db	`Matrix 1:\n`, 0
+string2	db	`%d\t`, 0
+string3	db	`\n`, 0
+string4	db	`Matrix 2:\n`, 0
+string5	db	`%d\t`, 0
+string6	db	`\n`, 0
+string7	db	`Matrix 3 = Matrix 1 + Matrix 2:\n`, 0
+string8	db	`%d\t`, 0
+string9	db	`\n`, 0
+
+OUTPUT:
+
+Assigning values to matrices
+Matrix 1:
+1	1	1	1	
+1	1	1	1	
+1	1	1	1	
+1	1	1	1	
+Matrix 2:
+2	2	2	2	
+2	2	2	2	
+2	2	2	2	
+2	2	2	2	
+Matrix 3 = Matrix 1 + Matrix 2:
+3	3	3	3	
+3	3	3	3	
+3	3	3	3	
+3	3	3	3	
+
+
+

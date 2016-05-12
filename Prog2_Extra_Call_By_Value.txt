@@ -1,0 +1,21 @@
+##+1+13 flags ##
+
+PROGRAM call_by_value
+   DECLARE
+      /* The parameter that will be passed by value */
+      INTEGER a;
+   END
+   
+   /* The procedure that takes a value parameter */
+   PROCEDURE value_proc { VALUE INTEGER a }
+      a <- 0; // Changing value of parameter within the procedure
+      OUTPUT "Value of parameter in procedure call: %d\n", a;
+   END
+   
+   MAIN
+      a <- 4;
+      OUTPUT "Value of parameter before procedure call: %d\n", a;
+      CALL value_proc { VALUE a };
+      OUTPUT "Value of parameter after procedure call: %d\n", a;
+   END
+END

@@ -1,0 +1,22 @@
+##+1+13 flags ##
+
+PROGRAM recursion
+   DECLARE      
+      INTEGER count; // Recursion counter
+   END
+
+   /* The procedure that is called recursively */
+   PROCEDURE recurse_this { VALUE INTEGER count }
+      OUTPUT "Recursion count: %d\n", count;
+      count <- count - 1;
+      IF (count >= 0) THEN
+         /* Calling itself (recursion) */
+         CALL recurse_this { VALUE count };
+      END;
+   END
+
+   MAIN
+      count <- 10;
+      CALL recurse_this { VALUE count };
+   END
+END

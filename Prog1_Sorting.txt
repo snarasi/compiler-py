@@ -1,0 +1,63 @@
+##+1+13 flags ##
+
+/* Sorting program - Bubble Sort */
+
+PROGRAM bubble
+   /* Declarations of all variables */
+   DECLARE
+      INTEGER arr 5;    // Array holding values to be sorted
+      INTEGER swapped;  // swapped = 1 if a swap has been made
+      INTEGER i;        // Counter
+      INTEGER j;        // variables
+      INTEGER temp;     // Temporary variable
+      INTEGER x;
+   END
+
+   /* The MAIN procedure. This will be executed first. */
+   MAIN
+      /* Assigning values to the array */
+      arr[0] <- 112;
+      arr[1] <- 3;
+      arr[2] <- -1389;
+      arr[3] <- 79;  
+      arr[4] <- -639;
+      
+      /* Printing array before sorting */
+      OUTPUT "Array before sorting:\n";
+      i <- 0;
+      
+      WHILE (i < 5) DO
+         OUTPUT "%d\t", arr[i];
+         i <- i + 1;
+      END;
+      OUTPUT "\n";
+
+      /* Bubble sort logic */
+      swapped <- 1;
+      j <- 0;
+      WHILE (swapped == 1) DO
+         swapped <- 0;
+         j <- j + 1;
+         i <- 0;
+         WHILE (i < 5 - j  ) DO
+            x <- i + 1;
+            IF (arr[i] > arr[x]) THEN
+               temp <- arr[i]; 
+               arr[i] <- arr[x];
+               arr[x] <- temp;
+               swapped <- 1;
+            END;
+            i <- i + 1;
+         END;
+      END;
+
+      /* Printing array after sorting */
+      OUTPUT "Sorted array:\n";
+      i <- 0;
+      WHILE (i < 5) DO
+         OUTPUT "%d\t", arr[i];
+         i <- i + 1;
+      END;
+      OUTPUT "\n";
+   END
+END

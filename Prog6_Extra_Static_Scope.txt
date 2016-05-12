@@ -1,0 +1,32 @@
+##+1+13 flags ##
+ic_scope
+   DECLARE
+      /* Global variables */
+      INTEGER a;
+      INTEGER b;
+   END
+
+   PROCEDURE assign
+      DECLARE
+         INTEGER a; // Declaring global 'a' locally
+      END
+      a <- 10;
+      b <- 20;
+      OUTPUT "Variables within procedure:\n";
+      OUTPUT "a = %d, b = %d\n", a, b;
+   END
+
+   MAIN
+      /* Assigning values to global variables */
+      a <- 5;
+      b <- 7;
+
+      OUTPUT "Variables before procedure call:\n";
+      OUTPUT "a = %d, b = %d\n", a, b;
+
+      CALL assign;
+
+      OUTPUT "Variables after procedure call:\n";
+      OUTPUT "a = %d, b = %d\n", a, b;      
+   END
+END

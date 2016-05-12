@@ -1,0 +1,21 @@
+##+1+13 flags ##
+
+PROGRAM call_by_ref
+   DECLARE
+      /* The parameter that will be passed by reference */
+      INTEGER a;
+   END
+   
+   /* The procedure that takes a reference parameter */
+   PROCEDURE reference_proc { REFERENCE INTEGER a }
+      a <- 0; // Changing value of parameter within the procedure
+      OUTPUT "Value of parameter in procedure call: %d\n", a;
+   END
+   
+   MAIN
+      a <- 4;
+      OUTPUT "Value of parameter before procedure call: %d\n", a;
+      CALL reference_proc { REFERENCE a };
+      OUTPUT "Value of parameter after procedure call: %d\n", a;
+   END
+END
