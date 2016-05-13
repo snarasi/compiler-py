@@ -15,9 +15,6 @@ if __name__ == "__main__":
     parser = Parser()
     lexicalAnalyzer = LexicalAnalyzer()
     lexicalAnalyzer.setParser(parser)   
-    print "Milestone 5 report : "
-    print "Dhaval Parmar \t\t dkparma@clemson.edu"
-    print "Akash Mudubagilu \t amuduba@clemson.edu"
     import datetime
     from time import gmtime, strftime
     print "executed at : ",strftime("%Y-%m-%d %H:%M:%S")
