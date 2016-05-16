@@ -365,11 +365,6 @@ Prog2_Extra_Call_By_Value.txt
 
 SOURCE:
 
-##+1+13 flags ##
-/* 
-   Dhaval Parmar	dkparma@clemson.edu
-   Akash Mudubagilu	amuduba@clemson.edu
-*/
 
 /* Extra Credit - Call By Value */
 
@@ -395,16 +390,7 @@ END
 
 SOURCE WITH 4 TUPLES:
 
-Milestone 5 report : 
-Dhaval Parmar 		 dkparma@clemson.edu
-Akash Mudubagilu 	 amuduba@clemson.edu
-executed at :  2012-04-29 07:28:29
 
-Source Line :  ##+1+13 flags ##
-Source Line :  /*
-Source Line :  Dhaval Parmar	dkparma@clemson.edu
-Source Line :  Akash Mudubagilu	amuduba@clemson.edu
-Source Line :  */
 
 
 Source Line :  
@@ -527,11 +513,7 @@ Prog3_Extra_Call_By_Reference.txt
 
 SOURCE:
 
-##+1+13 flags ##
-/* 
-   Dhaval Parmar	dkparma@clemson.edu
-   Akash Mudubagilu	amuduba@clemson.edu
-*/
+
 
 /* Extra Credit - Call By Reference */
 
@@ -557,16 +539,7 @@ END
 
 SOURCE WITH 4 TUPLES:
 
-Milestone 5 report : 
-Dhaval Parmar 		 dkparma@clemson.edu
-Akash Mudubagilu 	 amuduba@clemson.edu
-executed at :  2012-04-29 07:28:29
 
-Source Line :  ##+1+13 flags ##
-Source Line :  /*
-Source Line :  Dhaval Parmar	dkparma@clemson.edu
-Source Line :  Akash Mudubagilu	amuduba@clemson.edu
-Source Line :  */
 
 
 Source Line :  
@@ -688,13 +661,7 @@ Value of parameter after procedure call: 0
 
 Prog4_Extra_Recursion.txt
 
-SOURCE:
 
-##+1+13 flags ##
-/* 
-   Dhaval Parmar	dkparma@clemson.edu
-   Akash Mudubagilu	amuduba@clemson.edu
-*/
 
 /* Extra Credit - Recursion */
 
@@ -721,16 +688,7 @@ END
 
 SOURCE WITH 4 TUPLES:
 
-Milestone 5 report : 
-Dhaval Parmar 		 dkparma@clemson.edu
-Akash Mudubagilu 	 amuduba@clemson.edu
-executed at :  2012-04-29 07:28:30
 
-Source Line :  ##+1+13 flags ##
-Source Line :  /*
-Source Line :  Dhaval Parmar	dkparma@clemson.edu
-Source Line :  Akash Mudubagilu	amuduba@clemson.edu
-Source Line :  */
 
 
 Source Line :  
@@ -859,11 +817,7 @@ Prog6_Extra_Static_Scope.txt
 
 SOURCE:
 
-##+1+13 flags ##
-/* 
-   Dhaval Parmar	dkparma@clemson.edu
-   Akash Mudubagilu	amuduba@clemson.edu
-*/
+
 
 /* Extra Credit - Static Scope */
 
@@ -901,16 +855,7 @@ END
 
 SOURCE WITH 4 TUPLES:
 
-Milestone 5 report : 
-Dhaval Parmar 		 dkparma@clemson.edu
-Akash Mudubagilu 	 amuduba@clemson.edu
-executed at :  2012-04-29 07:28:30
 
-Source Line :  ##+1+13 flags ##
-Source Line :  /*
-Source Line :  Dhaval Parmar	dkparma@clemson.edu
-Source Line :  Akash Mudubagilu	amuduba@clemson.edu
-Source Line :  */
 
 
 Source Line :  
@@ -1085,10 +1030,7 @@ Prog7_Extra_Matrices.txt
 SOURCE:
 
 ##+1+13 flags ##
-/* 
-   Dhaval Parmar	dkparma@clemson.edu
-   Akash Mudubagilu	amuduba@clemson.edu
-*/
+
 
 /* Extra Credit - Matrices */
 
@@ -1168,16 +1110,7 @@ END
 
 SOURCE WITH 4 TUPLES:
 
-Milestone 5 report : 
-Dhaval Parmar 		 dkparma@clemson.edu
-Akash Mudubagilu 	 amuduba@clemson.edu
-executed at :  2012-04-29 07:28:30
 
-Source Line :  ##+1+13 flags ##
-Source Line :  /*
-Source Line :  Dhaval Parmar	dkparma@clemson.edu
-Source Line :  Akash Mudubagilu	amuduba@clemson.edu
-Source Line :  */
 
 
 Source Line :  
