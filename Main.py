@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# Main Program to be executed which calls the various modules - Lexical analysis, Semantics parser and pragmatics to convert 
+# tuples into machine level code using NASM.
 from LexicalAnalyzer import LexicalAnalyzer
 from Parser import Parser
 import re, sys, string
