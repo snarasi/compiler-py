@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# This module evaluates the 4-tuples and checks for proper syntax and grammer and converts the tuples into NASM code for execution.
 import re, sys, string
 import Config
 
