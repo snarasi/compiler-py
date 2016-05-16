@@ -1,4 +1,6 @@
 #!/usr/bin/python
+#The semantics program will incorporate the three generic types: semantic stack manipulation, symbol
+#table manipulation and the generation of intermediate code called 4-tuples
 import Config
 from SemanticsAnalyzer import SemanticsAnalyzer
 
