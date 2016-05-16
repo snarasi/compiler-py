@@ -1,4 +1,6 @@
 #!/usr/bin/python
+#Lexical Analyzer parses the program and recognizes the different token defined, these token / keywords are defined in the global
+# dictionary file.
 import re, sys, string
 import Config
 
