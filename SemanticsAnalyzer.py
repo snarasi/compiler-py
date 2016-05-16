@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# This module implements the 4-tuples which is needed to evaluate the grammer and rules of the programming language.
 import Config
 from pragma import Pragmatic
 
